@@ -52,6 +52,15 @@ document.addEventListener('DOMContentLoaded', function () {
     .contact-email a{color:#fff;font-weight:800;text-underline-offset:3px}
     .footer-email{color:#b8b8b1;text-decoration:none;font-size:.85rem}
     .footer-email:hover{color:#fff}
+
+    .logo-panel{transition:transform .42s cubic-bezier(.2,.8,.2,1),box-shadow .42s ease,filter .42s ease;will-change:transform}
+    .logo-panel img{transition:transform .42s cubic-bezier(.2,.8,.2,1),filter .42s ease}
+    .floating-chip{transition:transform .36s cubic-bezier(.2,.8,.2,1),box-shadow .36s ease}
+    .hero-art:hover .logo-panel{transform:rotate(-1deg) translateY(-8px) scale(1.025);box-shadow:0 48px 95px rgba(28,28,25,.18);filter:saturate(1.06)}
+    .hero-art:hover .logo-panel img{transform:scale(1.035)}
+    .hero-art:hover .chip-one{transform:translate(-10px,-8px) rotate(-2deg);box-shadow:0 20px 42px rgba(0,0,0,.12)}
+    .hero-art:hover .chip-two{transform:translate(10px,8px) rotate(2deg);box-shadow:0 20px 42px rgba(0,0,0,.12)}
+    @media (prefers-reduced-motion:reduce){.logo-panel,.logo-panel img,.floating-chip{transition:none!important}.hero-art:hover .logo-panel,.hero-art:hover .logo-panel img,.hero-art:hover .floating-chip{transform:none!important}}
   `;
   document.head.appendChild(contactStyle);
 });
