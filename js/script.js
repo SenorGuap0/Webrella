@@ -56,6 +56,31 @@ document.addEventListener('DOMContentLoaded', function () {
     footerBottom.appendChild(footerEmail);
   }
 
+  var featuredProject = document.querySelector('#work .project-card.project-wide');
+  if (featuredProject) {
+    var featuredVisual = featuredProject.querySelector('.project-visual');
+    var featuredMeta = featuredProject.querySelector('.project-meta');
+
+    if (featuredVisual) {
+      featuredVisual.classList.remove('bloom-visual');
+      featuredVisual.classList.add('marea-visual');
+      featuredVisual.innerHTML = `
+        <a class="marea-browser" href="marea/" target="_blank" rel="noopener" aria-label="Open the Marea Cafe concept website">
+          <div class="marea-browser-bar"><span></span><span></span><span></span><small>marea café</small></div>
+          <div class="marea-preview-wrap">
+            <img src="ChatGPT%20Image%20Aug%2010,%202026,%2007_00_49%20PM.png" alt="Marea Café website concept preview">
+            <div class="marea-preview-badge">View live site ↗</div>
+          </div>
+        </a>`;
+    }
+
+    if (featuredMeta) {
+      featuredMeta.innerHTML = `
+        <div><span>Fictional concept</span><h3>Marea Café</h3></div>
+        <div class="marea-project-copy"><p>A colorful Latin-inspired café concept built around menu discovery, brand personality, and a responsive customer experience.</p><a class="project-live-link" href="marea/" target="_blank" rel="noopener">View live concept ↗</a></div>`;
+    }
+  }
+
   var contactStyle = document.createElement('style');
   contactStyle.textContent = `
     .contact-email{margin-top:18px!important;color:#fff!important;font-size:.95rem}
@@ -82,6 +107,22 @@ document.addEventListener('DOMContentLoaded', function () {
     .hero-art:hover .logo-panel img{transform:scale(1.035)}
     .hero-art:hover .chip-one{transform:translate(-10px,-8px) rotate(-2deg);box-shadow:0 20px 42px rgba(0,0,0,.12)}
     .hero-art:hover .chip-two{transform:translate(10px,8px) rotate(2deg);box-shadow:0 20px 42px rgba(0,0,0,.12)}
+
+    .marea-visual{display:grid!important;place-items:center!important;padding:36px!important;background:linear-gradient(135deg,#f43b68 0%,#ffbe28 52%,#43bbae 100%)!important}
+    .marea-browser{display:block;width:88%;height:82%;overflow:hidden;border-radius:18px;background:#fff3dc;text-decoration:none;box-shadow:0 30px 70px rgba(0,0,0,.32);transform:rotate(-1.2deg);transition:transform .3s ease,box-shadow .3s ease}
+    .marea-browser:hover{transform:rotate(0deg) translateY(-7px) scale(1.015);box-shadow:0 38px 90px rgba(0,0,0,.38)}
+    .marea-browser-bar{height:36px;display:flex;align-items:center;gap:7px;padding:0 13px;background:#fff8e9;border-bottom:1px solid rgba(50,21,13,.15)}
+    .marea-browser-bar span{width:8px;height:8px;border-radius:50%;background:#ef3741}.marea-browser-bar span:nth-child(2){background:#ffce55}.marea-browser-bar span:nth-child(3){background:#92bd70}
+    .marea-browser-bar small{margin-left:auto;color:#5a463e;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+    .marea-preview-wrap{position:relative;height:calc(100% - 36px);overflow:hidden;background:#fff3dc}
+    .marea-preview-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease}
+    .marea-browser:hover .marea-preview-wrap img{transform:scale(1.025)}
+    .marea-preview-badge{position:absolute;right:18px;bottom:18px;padding:10px 14px;border-radius:999px;background:#171717;color:#fff;font-size:.7rem;font-weight:850;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+    .marea-project-copy{display:flex;flex-direction:column;align-items:flex-start;gap:15px}
+    .marea-project-copy p{margin:0!important}
+    .project-live-link{display:inline-flex;align-items:center;color:#fff;text-decoration:none;font-size:.75rem;font-weight:850;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:3px;transition:.2s ease}
+    .project-live-link:hover{color:#ffce55;border-color:#ffce55;transform:translateX(3px)}
+
     @media(max-width:1280px) and (min-width:1121px){
       .header-inner{width:calc(100% - 36px)!important}
       .header-wordmark{font-size:2rem}
@@ -90,7 +131,8 @@ document.addEventListener('DOMContentLoaded', function () {
       .site-nav .nav-cta{min-height:44px;padding:0 16px!important;margin-left:7px!important}
     }
     @media(max-width:1120px){.header-wordmark{display:none}}
-    @media (prefers-reduced-motion:reduce){.logo-panel,.logo-panel img,.floating-chip,.header-wordmark{transition:none!important}.hero-art:hover .logo-panel,.hero-art:hover .logo-panel img,.hero-art:hover .floating-chip{transform:none!important}}
+    @media(max-width:760px){.marea-visual{padding:22px!important}.marea-browser{width:96%;height:88%}.marea-preview-badge{right:10px;bottom:10px;font-size:.62rem;padding:8px 11px}.project-meta{grid-template-columns:1fr!important}.marea-project-copy{gap:10px}}
+    @media (prefers-reduced-motion:reduce){.logo-panel,.logo-panel img,.floating-chip,.header-wordmark,.marea-browser,.marea-preview-wrap img,.project-live-link{transition:none!important}.hero-art:hover .logo-panel,.hero-art:hover .logo-panel img,.hero-art:hover .floating-chip,.marea-browser:hover,.marea-browser:hover .marea-preview-wrap img,.project-live-link:hover{transform:none!important}}
   `;
   document.head.appendChild(contactStyle);
 });
