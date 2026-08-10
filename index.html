@@ -6,12 +6,40 @@
   <meta name="description" content="Webrella Studio builds modern, responsive websites for small and independent businesses.">
   <title>Webrella Studio | Rain or Shine, Your Site's Online</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Header mark: show only the umbrella symbol and give it enough room. */
+    .header-inner{min-height:108px}
+    .brand{width:205px;height:92px;overflow:hidden;flex:0 0 205px}
+    .brand-logo-crop{display:block;position:relative;width:205px;height:92px;overflow:hidden}
+    .nav-logo{position:absolute;width:205px!important;max-width:none!important;height:auto!important;left:50%!important;top:0!important;transform:translateX(-50%)!important}
+
+    /* Footer mark: crop the source artwork before its original dark wordmark. */
+    .footer-mark{display:flex;align-items:center;gap:18px}
+    .footer-umbrella{display:block;position:relative;width:125px;height:72px;overflow:hidden;flex:0 0 125px}
+    .footer-umbrella img{position:absolute!important;width:180px!important;max-width:none!important;height:auto!important;left:50%!important;top:0!important;transform:translateX(-50%)!important}
+    .footer-wordmark{display:flex;flex-direction:column;line-height:1}
+    .footer-wordmark strong{color:#fff!important;font-size:1.55rem;font-weight:900;letter-spacing:-.055em}
+    .footer-wordmark span{margin-top:5px;color:#fff!important;font-size:.62rem;font-weight:850;letter-spacing:.12em;white-space:nowrap}
+
+    @media(max-width:720px){
+      .header-inner{min-height:92px}
+      .brand{width:170px;height:78px;flex-basis:170px}
+      .brand-logo-crop{width:170px;height:78px}
+      .nav-logo{width:170px!important}
+      .site-nav{top:92px!important}
+      .footer-mark{gap:13px}
+      .footer-umbrella{width:100px;height:58px;flex-basis:100px}
+      .footer-umbrella img{width:145px!important}
+      .footer-wordmark strong{font-size:1.25rem}
+      .footer-wordmark span{font-size:.5rem;white-space:normal}
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Webrella Studio home">
-        <span class="brand-logo-crop"><img class="nav-logo" src="ChatGPT%20Image%20Aug%2010,%202026,%2011_04_26%20AM.png" alt="Webrella Studio"></span>
+        <span class="brand-logo-crop"><img class="nav-logo" src="ChatGPT%20Image%20Aug%2010,%202026,%2011_04_26%20AM.png" alt="Webrella umbrella logo"></span>
       </a>
       <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger" aria-hidden="true"></span></button>
       <nav id="primary-navigation" class="site-nav" aria-label="Primary navigation"><ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#process">Process</a></li><li><a href="#about">About</a></li><li><a class="nav-cta" href="#contact">Start a project</a></li></ul></nav>
@@ -37,7 +65,7 @@
     <section id="contact" class="contact-section"><div class="container contact-shell"><div class="contact-copy"><p class="section-kicker contact-kicker">Have a project in mind?</p><h2>Rain or shine, let's get your site online.</h2><p>Tell us a little about your business and what you want to build. We will use that to figure out the right next step.</p></div><form class="contact-form" action="#" method="post" novalidate><div class="form-grid"><div class="form-row"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div><div class="form-row"><label for="company">Business</label><input id="company" name="company" type="text" placeholder="Business name"></div></div><div class="form-row"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div><div class="form-row"><label for="message">Project details</label><textarea id="message" name="message" rows="5" placeholder="What are you looking to build?" required></textarea></div><div class="form-actions"><button class="btn btn-light" type="submit">Start a conversation <span>↗</span></button></div></form></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-grid"><div class="footer-branding"><div class="footer-mark" aria-label="Webrella Studio"><span class="footer-umbrella"><img src="ChatGPT%20Image%20Aug%2010,%202026,%2011_04_26%20AM.png" alt=""></span><div class="footer-wordmark"><strong>webrella</strong><span>RAIN OR SHINE, YOUR SITE'S ONLINE</span></div></div></div><div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div><div class="footer-bottom"><small>&copy; <span id="year"></span> Webrella Studio</small><span>Rain or shine, your site's online.</span></div></div></footer>
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-branding"><div class="footer-mark" aria-label="Webrella Studio"><span class="footer-umbrella"><img src="ChatGPT%20Image%20Aug%2010,%202026,%2011_04_26%20AM.png" alt="Webrella umbrella logo"></span><div class="footer-wordmark"><strong>webrella</strong><span>RAIN OR SHINE, YOUR SITE'S ONLINE</span></div></div></div><div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div><div class="footer-bottom"><small>&copy; <span id="year"></span> Webrella Studio</small><span>Rain or shine, your site's online.</span></div></div></footer>
 
   <script src="js/script.js"></script>
 </body>
