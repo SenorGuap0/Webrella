@@ -28,4 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
       button.setAttribute('aria-expanded', String(open));
     });
   });
+
+  var contactCopy = document.querySelector('.contact-copy');
+  if (contactCopy && !contactCopy.querySelector('.contact-email')) {
+    var emailLine = document.createElement('p');
+    emailLine.className = 'contact-email';
+    emailLine.innerHTML = 'Prefer email? <a href="mailto:webrellacontact@gmail.com">webrellacontact@gmail.com</a>';
+    contactCopy.appendChild(emailLine);
+  }
+
+  var footerBottom = document.querySelector('.footer-bottom');
+  if (footerBottom && !footerBottom.querySelector('.footer-email')) {
+    var footerEmail = document.createElement('a');
+    footerEmail.className = 'footer-email';
+    footerEmail.href = 'mailto:webrellacontact@gmail.com';
+    footerEmail.textContent = 'webrellacontact@gmail.com';
+    footerBottom.appendChild(footerEmail);
+  }
+
+  var contactStyle = document.createElement('style');
+  contactStyle.textContent = `
+    .contact-email{margin-top:18px!important;color:#fff!important;font-size:.95rem}
+    .contact-email a{color:#fff;font-weight:800;text-underline-offset:3px}
+    .footer-email{color:#b8b8b1;text-decoration:none;font-size:.85rem}
+    .footer-email:hover{color:#fff}
+  `;
+  document.head.appendChild(contactStyle);
 });
