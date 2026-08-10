@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (featuredMeta) {
       featuredMeta.innerHTML = `
         <div class="marea-project-title"><span>Fictional concept</span><h3>Marea Café</h3></div>
-        <div class="marea-project-copy"><p>A colorful Latin-inspired café concept built around menu discovery, brand personality, and a responsive customer experience.</p></div>`;
+        <div class="marea-project-copy"><p>A colorful Latin-inspired café concept built around menu discovery, brand personality, and a responsive customer experience.</p><a class="project-live-link" href="marea/" target="_blank" rel="noopener">View live concept ↗</a></div>`;
     }
   }
 
@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
     .marea-project-title span{margin-bottom:8px!important}
     .marea-project-title h3{margin:0!important}
     .marea-project-copy p{margin:0!important;max-width:390px!important}
+    .project-live-link{display:inline-flex;align-items:center;color:#fff;text-decoration:none;font-size:.75rem;font-weight:850;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:3px;transition:.2s ease}
+    .project-live-link:hover{color:#ffce55;border-color:#ffce55;transform:translateX(3px)}
 
     @media(max-width:1280px) and (min-width:1121px){
       .header-inner{width:calc(100% - 36px)!important}
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     @media(max-width:1120px){.header-wordmark{display:none}}
     @media(max-width:760px){.marea-visual{padding:22px!important}.marea-browser{width:96%;height:88%}.project-wide .project-meta{grid-template-columns:1fr!important;gap:18px!important;align-items:start!important}.marea-project-title,.marea-project-copy{max-width:none!important;justify-self:start!important}.marea-project-copy{gap:10px}}
-    @media (prefers-reduced-motion:reduce){.logo-panel,.logo-panel img,.floating-chip,.header-wordmark,.marea-browser,.marea-preview-wrap img{transition:none!important}.hero-art:hover .logo-panel,.hero-art:hover .logo-panel img,.hero-art:hover .floating-chip,.marea-browser:hover,.marea-browser:hover .marea-preview-wrap img{transform:none!important}}
+    @media (prefers-reduced-motion:reduce){.logo-panel,.logo-panel img,.floating-chip,.header-wordmark,.marea-browser,.marea-preview-wrap img,.project-live-link{transition:none!important}.hero-art:hover .logo-panel,.hero-art:hover .logo-panel img,.hero-art:hover .floating-chip,.marea-browser:hover,.marea-browser:hover .marea-preview-wrap img,.project-live-link:hover{transform:none!important}}
   `;
   document.head.appendChild(contactStyle);
 });
