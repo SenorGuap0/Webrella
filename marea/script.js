@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded',function(){
     .ticker-group{display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap}
     .food-photo{width:100%!important;height:180px!important;display:block!important;object-fit:cover!important;object-position:center!important;font-size:0!important;background:none!important}
 
+    .ice{position:absolute!important;z-index:8!important;top:26px!important;left:20%!important;width:118px!important;height:72px!important;border-radius:50%!important;background:var(--yellow)!important;color:var(--brown)!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;font-family:'Shrikhand',cursive!important;font-size:1.25rem!important;line-height:.95!important;letter-spacing:.02em!important;text-shadow:none!important;box-shadow:5px 6px 0 var(--brown)!important;border:3px solid var(--brown)!important;transform:rotate(-9deg)!important}
+
     .story-section{grid-template-columns:minmax(0,1.15fr) minmax(300px,.9fr) minmax(210px,.42fr)!important;gap:clamp(24px,3vw,54px)!important;padding:54px 5vw!important;min-height:520px!important;overflow:hidden!important}
     .cafe-scene{height:390px!important;position:relative!important;overflow:hidden!important;background:#21120c!important;border-radius:8px!important;box-shadow:0 18px 45px rgba(0,0,0,.28)!important}
     .cafe-photo img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:50% 72%!important;transform:none!important;display:block!important}
@@ -52,24 +54,10 @@ document.addEventListener('DOMContentLoaded',function(){
     .polaroid-photo{height:235px!important;position:relative!important;overflow:hidden!important;background:#2d1b12!important;display:block!important}
     .restaurant-polaroid img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:78% 72%!important;transform:none!important;display:block!important}
     .polaroid em{font-size:1.05rem!important;margin-top:12px!important}
-
     .visit-section .thanks{width:250px!important;height:150px!important;max-width:none!important;padding:30px!important;justify-self:center!important;align-self:center!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:1.35rem!important;line-height:1.45!important;border-radius:48% 52% 45% 55%!important;transform:rotate(8deg)!important}
 
-    @media(max-width:1050px){
-      .story-section{grid-template-columns:1.15fr .85fr!important;min-height:auto!important}
-      .polaroid{display:none!important}
-      .cafe-scene{height:360px!important}
-      .cafe-photo img{object-position:50% 72%!important}
-      .visit-section .thanks{width:220px!important;height:135px!important}
-    }
-    @media(max-width:760px){
-      .story-section{grid-template-columns:1fr!important;padding:34px 20px 48px!important}
-      .cafe-scene{height:285px!important;order:1!important}
-      .story-copy{order:2!important}
-      .cafe-photo img{object-position:50% 72%!important}
-      .story-copy h2{font-size:2.55rem!important}
-      .visit-section .thanks{width:210px!important;height:125px!important;justify-self:start!important;font-size:1.15rem!important}
-    }
+    @media(max-width:1050px){.story-section{grid-template-columns:1.15fr .85fr!important;min-height:auto!important}.polaroid{display:none!important}.cafe-scene{height:360px!important}.visit-section .thanks{width:220px!important;height:135px!important}}
+    @media(max-width:760px){.story-section{grid-template-columns:1fr!important;padding:34px 20px 48px!important}.cafe-scene{height:285px!important;order:1!important}.story-copy{order:2!important}.story-copy h2{font-size:2.55rem!important}.visit-section .thanks{width:210px!important;height:125px!important;justify-self:start!important;font-size:1.15rem!important}.ice{left:8%!important;top:20px!important;width:100px!important;height:62px!important;font-size:1.05rem!important}}
 
     @keyframes mareaTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   `;
