@@ -53,11 +53,14 @@ document.addEventListener('DOMContentLoaded',function(){
     .restaurant-polaroid img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:78% 72%!important;transform:none!important;display:block!important}
     .polaroid em{font-size:1.05rem!important;margin-top:12px!important}
 
+    .visit-section .thanks{width:250px!important;height:150px!important;max-width:none!important;padding:30px!important;justify-self:center!important;align-self:center!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:1.35rem!important;line-height:1.45!important;border-radius:48% 52% 45% 55%!important;transform:rotate(8deg)!important}
+
     @media(max-width:1050px){
       .story-section{grid-template-columns:1.15fr .85fr!important;min-height:auto!important}
       .polaroid{display:none!important}
       .cafe-scene{height:360px!important}
       .cafe-photo img{object-position:50% 72%!important}
+      .visit-section .thanks{width:220px!important;height:135px!important}
     }
     @media(max-width:760px){
       .story-section{grid-template-columns:1fr!important;padding:34px 20px 48px!important}
@@ -65,6 +68,7 @@ document.addEventListener('DOMContentLoaded',function(){
       .story-copy{order:2!important}
       .cafe-photo img{object-position:50% 72%!important}
       .story-copy h2{font-size:2.55rem!important}
+      .visit-section .thanks{width:210px!important;height:125px!important;justify-self:start!important;font-size:1.15rem!important}
     }
 
     @keyframes mareaTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
