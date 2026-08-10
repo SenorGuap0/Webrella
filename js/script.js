@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Keep founder display names current.
+  document.querySelectorAll('.founder-card.kidus h3').forEach(function (name) {
+    name.textContent = 'Kidus Fanta';
+  });
+
   // Load the expanded process timeline styles.
   var processStyles = document.createElement('link');
   processStyles.rel = 'stylesheet';
