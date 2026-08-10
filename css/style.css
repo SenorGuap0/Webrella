@@ -38,8 +38,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .lead{margin:0 0 1.25rem;color:var(--muted);font-size:1.08rem;max-width:680px}
 .hero-cta a + a{margin-left:.75rem}
 .hero-image{flex:1;display:flex;justify-content:center;align-items:center;margin:0}
-.device-mockup{width:320px;height:200px;border-radius:14px;background:linear-gradient(135deg,#f6f9ff,#eef6ff);box-shadow:0 8px 30px rgba(13,20,30,.06);border:1px solid #eaeff6;position:relative}
-.device-mockup::before{content:"";position:absolute;left:28px;right:28px;top:28px;height:10px;border-radius:6px;background:#dcecff;box-shadow:0 28px 0 #e8f1fb,0 56px 0 #e8f1fb,0 84px 0 #e8f1fb}
+.device-mockup{width:min(520px,100%);aspect-ratio:3/2;border:0;border-radius:18px;background-image:url('../ChatGPT%20Image%20Aug%2010,%202026,%2011_04_26%20AM.png');background-repeat:no-repeat;background-position:center;background-size:contain;box-shadow:none;position:relative}
+.device-mockup::before{content:none}
 
 .section{padding:2.5rem 0}
 .section h2{margin:0 0 1rem;font-size:1.35rem}
@@ -90,5 +90,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .hero h1{font-size:2rem}
   .hero-cta a{display:inline-block;margin-bottom:.5rem}
   .hero-cta a + a{margin-left:.25rem}
+  .device-mockup{width:100%}
   .footer-inner{flex-direction:column;align-items:flex-start}
 }
