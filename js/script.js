@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (featuredMeta) {
       featuredMeta.innerHTML = `
         <div class="marea-project-title"><span>Fictional concept</span><h3>Marea Café</h3></div>
-        <div class="marea-project-copy"><p>A colorful Latin-inspired café concept built around menu discovery, brand personality, and a responsive customer experience.</p><a class="project-live-link" href="marea/" target="_blank" rel="noopener">View live concept ↗</a></div>`;
+        <div class="marea-project-copy"><p>A colorful Latin-inspired café concept built around menu discovery, brand personality, and a responsive customer experience.</p></div>`;
     }
   }
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .hero-art:hover .chip-two{transform:translate(10px,8px) rotate(2deg);box-shadow:0 20px 42px rgba(0,0,0,.12)}
 
     .marea-visual{display:grid!important;place-items:center!important;padding:36px!important;background:linear-gradient(135deg,#f43b68 0%,#ffbe28 52%,#43bbae 100%)!important}
-    .marea-browser{display:block;width:88%;height:82%;overflow:hidden;border-radius:18px;background:#fff3dc;text-decoration:none;box-shadow:0 30px 70px rgba(0,0,0,.32);transform:rotate(-1.2deg);transition:transform .3s ease,box-shadow .3s ease}
+    .marea-browser{display:block;width:88%;height:82%;overflow:hidden;border-radius:18px;background:#fff3dc;text-decoration:none;box-shadow:0 30px 70px rgba(0,0,0,.32);transform:rotate(-1.2deg);transition:transform .3s ease,box-shadow .3s ease;cursor:pointer}
     .marea-browser:hover{transform:rotate(0deg) translateY(-7px) scale(1.015);box-shadow:0 38px 90px rgba(0,0,0,.38)}
     .marea-browser-bar{height:36px;display:flex;align-items:center;gap:7px;padding:0 13px;background:#fff8e9;border-bottom:1px solid rgba(50,21,13,.15)}
     .marea-browser-bar span{width:8px;height:8px;border-radius:50%;background:#ef3741}.marea-browser-bar span:nth-child(2){background:#ffce55}.marea-browser-bar span:nth-child(3){background:#92bd70}
@@ -123,8 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
     .marea-project-title span{margin-bottom:8px!important}
     .marea-project-title h3{margin:0!important}
     .marea-project-copy p{margin:0!important;max-width:390px!important}
-    .project-live-link{display:inline-flex;align-items:center;color:#fff;text-decoration:none;font-size:.75rem;font-weight:850;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:3px;transition:.2s ease}
-    .project-live-link:hover{color:#ffce55;border-color:#ffce55;transform:translateX(3px)}
 
     @media(max-width:1280px) and (min-width:1121px){
       .header-inner{width:calc(100% - 36px)!important}
@@ -135,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     @media(max-width:1120px){.header-wordmark{display:none}}
     @media(max-width:760px){.marea-visual{padding:22px!important}.marea-browser{width:96%;height:88%}.project-wide .project-meta{grid-template-columns:1fr!important;gap:18px!important;align-items:start!important}.marea-project-title,.marea-project-copy{max-width:none!important;justify-self:start!important}.marea-project-copy{gap:10px}}
-    @media (prefers-reduced-motion:reduce){.logo-panel,.logo-panel img,.floating-chip,.header-wordmark,.marea-browser,.marea-preview-wrap img,.project-live-link{transition:none!important}.hero-art:hover .logo-panel,.hero-art:hover .logo-panel img,.hero-art:hover .floating-chip,.marea-browser:hover,.marea-browser:hover .marea-preview-wrap img,.project-live-link:hover{transform:none!important}}
+    @media (prefers-reduced-motion:reduce){.logo-panel,.logo-panel img,.floating-chip,.header-wordmark,.marea-browser,.marea-preview-wrap img{transition:none!important}.hero-art:hover .logo-panel,.hero-art:hover .logo-panel img,.hero-art:hover .floating-chip,.marea-browser:hover,.marea-browser:hover .marea-preview-wrap img{transform:none!important}}
   `;
   document.head.appendChild(contactStyle);
 });
