@@ -20,11 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Keep founder display names current.
-  document.querySelectorAll('.founder-card.kidus h3').forEach(function (name) {
-    name.textContent = 'Kidus Fanta';
-  });
-
   // Load the expanded process timeline styles.
   var processStyles = document.createElement('link');
   processStyles.rel = 'stylesheet';
@@ -77,7 +72,39 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>`;
   }
 
-  // Final logo sizing + footer contrast treatment.
+  // Add LinkedIn profiles to the founder cards and use Kidus's full name.
+  var emersonCard = document.querySelector('.founder-card.emerson .founder-info');
+  if (emersonCard && !emersonCard.querySelector('.linkedin-link')) {
+    var emersonLinkedIn = document.createElement('a');
+    emersonLinkedIn.className = 'linkedin-link';
+    emersonLinkedIn.href = 'https://www.linkedin.com/in/emerson-martinez-umbc';
+    emersonLinkedIn.target = '_blank';
+    emersonLinkedIn.rel = 'noopener noreferrer';
+    emersonLinkedIn.setAttribute('aria-label', 'View Emerson Martinez on LinkedIn');
+    emersonLinkedIn.innerHTML = '<span class="linkedin-icon" aria-hidden="true">in</span><span>View LinkedIn</span><span aria-hidden="true">↗</span>';
+    emersonCard.appendChild(emersonLinkedIn);
+  }
+
+  var kidusCard = document.querySelector('.founder-card.kidus .founder-info');
+  if (kidusCard) {
+    var kidusName = kidusCard.querySelector('h3');
+    if (kidusName) kidusName.textContent = 'Kidus Fanta';
+    var kidusPhoto = document.querySelector('.founder-card.kidus .founder-photo');
+    if (kidusPhoto) kidusPhoto.alt = 'Kidus Fanta';
+
+    if (!kidusCard.querySelector('.linkedin-link')) {
+      var kidusLinkedIn = document.createElement('a');
+      kidusLinkedIn.className = 'linkedin-link';
+      kidusLinkedIn.href = 'https://www.linkedin.com/in/kidus-fanta-976b28260/';
+      kidusLinkedIn.target = '_blank';
+      kidusLinkedIn.rel = 'noopener noreferrer';
+      kidusLinkedIn.setAttribute('aria-label', 'View Kidus Fanta on LinkedIn');
+      kidusLinkedIn.innerHTML = '<span class="linkedin-icon" aria-hidden="true">in</span><span>View LinkedIn</span><span aria-hidden="true">↗</span>';
+      kidusCard.appendChild(kidusLinkedIn);
+    }
+  }
+
+  // Final logo sizing + footer contrast treatment and founder social styling.
   var style = document.createElement('style');
   style.textContent = `
     .brand{width:170px;height:64px;overflow:hidden;display:flex;align-items:center}
@@ -89,7 +116,21 @@ document.addEventListener('DOMContentLoaded', function () {
     .footer-wordmark{display:flex;flex-direction:column;gap:3px}
     .footer-wordmark strong{color:#fff;font-size:2rem;line-height:.95;letter-spacing:-.055em;font-weight:900}
     .footer-wordmark span{color:#fff;font-size:.56rem;font-weight:800;letter-spacing:.18em;white-space:nowrap}
-    @media (max-width:720px){.brand{width:140px;height:54px}.brand-logo-crop{width:140px;height:54px}.brand-logo-crop .nav-logo{width:188px}.footer-mark{gap:10px}.footer-umbrella{width:72px;height:72px;flex-basis:72px}.footer-umbrella img{width:160px}.footer-wordmark strong{font-size:1.7rem}.footer-wordmark span{font-size:.47rem;letter-spacing:.13em}}
+
+    .linkedin-link{display:inline-flex;align-items:center;gap:9px;width:max-content;margin-top:18px;padding:10px 14px;border:1px solid rgba(23,23,23,.12);border-radius:999px;background:#fff;color:#171717;text-decoration:none;font-size:.78rem;font-weight:850;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+    .linkedin-link:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08);background:#f6f8fa}
+    .linkedin-icon{display:grid;place-items:center;width:23px;height:23px;border-radius:6px;background:#0a66c2;color:#fff;font-size:.7rem;font-weight:900;line-height:1}
+
+    @media (max-width:720px){
+      .brand{width:140px;height:54px}
+      .brand-logo-crop{width:140px;height:54px}
+      .brand-logo-crop .nav-logo{width:188px}
+      .footer-mark{gap:10px}
+      .footer-umbrella{width:72px;height:72px;flex-basis:72px}
+      .footer-umbrella img{width:160px}
+      .footer-wordmark strong{font-size:1.7rem}
+      .footer-wordmark span{font-size:.47rem;letter-spacing:.13em}
+    }
   `;
   document.head.appendChild(style);
 });
