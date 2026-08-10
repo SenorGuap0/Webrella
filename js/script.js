@@ -64,14 +64,14 @@ document.addEventListener('DOMContentLoaded', function () {
     .footer-email:hover{color:#fff}
 
     @media(min-width:1121px){
-      .header-inner{display:grid!important;grid-template-columns:minmax(190px,1fr) auto minmax(620px,1.45fr);align-items:center;position:relative}
+      .header-inner{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;max-width:none!important;width:calc(100% - 64px)!important}
       .brand{grid-column:1;grid-row:1;justify-self:start}
       .header-wordmark{grid-column:2;grid-row:1;position:static!important;transform:none!important;justify-self:center;z-index:2;color:#171717;text-decoration:none;font-size:2.3rem;font-weight:900;letter-spacing:-.06em;line-height:1;white-space:nowrap;transition:transform .2s ease,opacity .2s ease}
       .header-wordmark:hover{transform:scale(1.04)!important;opacity:.72}
-      .site-nav{grid-column:3;grid-row:1;justify-self:stretch;margin-left:0!important}
-      .site-nav ul{justify-content:flex-end;gap:6px;width:100%}
+      .site-nav{grid-column:3;grid-row:1;justify-self:end;margin-left:0!important;transform:translateX(0)}
+      .site-nav ul{justify-content:flex-end;gap:8px;width:max-content}
       .site-nav a{white-space:nowrap}
-      .site-nav .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 19px!important;border-radius:999px;line-height:1;white-space:nowrap;margin-left:10px!important}
+      .site-nav .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 19px!important;border-radius:999px;line-height:1;white-space:nowrap;margin-left:12px!important}
       .nav-toggle{grid-column:3;grid-row:1;justify-self:end}
     }
 
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .hero-art:hover .chip-one{transform:translate(-10px,-8px) rotate(-2deg);box-shadow:0 20px 42px rgba(0,0,0,.12)}
     .hero-art:hover .chip-two{transform:translate(10px,8px) rotate(2deg);box-shadow:0 20px 42px rgba(0,0,0,.12)}
     @media(max-width:1280px) and (min-width:1121px){
-      .header-inner{grid-template-columns:minmax(170px,.9fr) auto minmax(560px,1.35fr)}
+      .header-inner{width:calc(100% - 36px)!important}
       .header-wordmark{font-size:2rem}
       .site-nav ul{gap:2px}
       .site-nav a{padding-left:8px;padding-right:8px;font-size:.82rem}
