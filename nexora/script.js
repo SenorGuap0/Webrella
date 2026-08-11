@@ -39,6 +39,15 @@ document.addEventListener('DOMContentLoaded',()=>{
       if(dockY>=r.top&&dockY<=r.bottom)overGreen=true;
     });
     dock.classList.toggle('on-green',overGreen);
+    dockLinks.forEach((link,i)=>{
+      if(overGreen){
+        link.style.color=i===active?'#050705':'rgba(5,7,5,.48)';
+        link.style.textShadow=i===active?'none':'0 0 1px rgba(5,7,5,.15)';
+      }else{
+        link.style.color='';
+        link.style.textShadow='';
+      }
+    });
   }
   dockLinks.forEach((link,i)=>link.addEventListener('click',()=>{
     setDockActive(i);
