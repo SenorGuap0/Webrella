@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   const flowSteps=$$('.flow-step'), flowProgress=$('#flowProgress');function updateFlow(){const sec=$('.workflow-section'),r=sec.getBoundingClientRect(),vh=innerHeight;const p=Math.max(0,Math.min(1,(vh-r.top)/(r.height*.83)));flowProgress.style.height=(p*100)+'%';flowSteps.forEach((s,i)=>s.classList.toggle('active',p>(i/(flowSteps.length-.2))))}addEventListener('scroll',updateFlow,{passive:true});updateFlow();
 
-  const dockLinks=$$('.dock a');
+  const dock=$('.dock'),dockLinks=$$('.dock a');
   const dockSections=[$('.hero'),$('#system'),$('#engine'),$('#network'),$('#company')];
   function setDockActive(index){dockLinks.forEach((a,i)=>a.classList.toggle('active',i===index))}
   function updateDock(){
@@ -29,6 +29,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       if(section&&probe>=section.offsetTop)active=i;
     }
     setDockActive(active);
+
+    const dockRect=dock.getBoundingClientRect();
+    const dockY=dockRect.top+dockRect.height/2;
+    const greenSections=$$('.stats-zone,.cta-zone');
+    let overGreen=false;
+    greenSections.forEach(section=>{
+      const r=section.getBoundingClientRect();
+      if(dockY>=r.top&&dockY<=r.bottom)overGreen=true;
+    });
+    dock.classList.toggle('on-green',overGreen);
   }
   dockLinks.forEach((link,i)=>link.addEventListener('click',()=>{
     setDockActive(i);
