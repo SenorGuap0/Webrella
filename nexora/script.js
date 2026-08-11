@@ -18,7 +18,19 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   const flowSteps=$$('.flow-step'), flowProgress=$('#flowProgress');function updateFlow(){const sec=$('.workflow-section'),r=sec.getBoundingClientRect(),vh=innerHeight;const p=Math.max(0,Math.min(1,(vh-r.top)/(r.height*.83)));flowProgress.style.height=(p*100)+'%';flowSteps.forEach((s,i)=>s.classList.toggle('active',p>(i/(flowSteps.length-.2))))}addEventListener('scroll',updateFlow,{passive:true});updateFlow();
 
-  const sections=['top','system','engine','network','company'].map(id=>document.getElementById(id));const dockLinks=$$('.dock a');const secObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const idx=sections.indexOf(e.target);dockLinks.forEach((a,i)=>a.classList.toggle('active',i===idx))}})},{threshold:.35});sections.forEach(s=>secObs.observe(s));
+  const dockLinks=$$('.dock a');
+  const dockSections=[$('.hero'),$('#system'),$('#engine'),$('#network'),$('#company')];
+  function setDockActive(index){dockLinks.forEach((a,i)=>a.classList.toggle('active',i===index))}
+  function updateDock(){
+    if(window.scrollY<Math.max(120,innerHeight*.35)){setDockActive(0);return}
+    const marker=innerHeight*.42;
+    let active=0;
+    dockSections.forEach((section,i)=>{if(!section)return;const r=section.getBoundingClientRect();if(r.top<=marker&&r.bottom>marker)active=i});
+    setDockActive(active);
+  }
+  addEventListener('scroll',updateDock,{passive:true});
+  addEventListener('resize',updateDock);
+  updateDock();
 
   const run=$('#runTerminal'),out=$('#terminalOutput');let running=false;run.addEventListener('click',()=>{if(running)return;running=true;out.innerHTML='<p><i>›</i> nexora.initialize()</p>';const lines=[['Connecting systems...','muted'],['CRM connected ✓','ok'],['Email connected ✓','ok'],['Analytics connected ✓','ok'],['AI decision layer ready ✓','ok'],['Workflow ready ✓','ok'],['› RUN AUTOMATION',''],['Lead classified → routed → follow-up sent','ok'],['COMPLETE / 0.82 sec','ok']];lines.forEach((item,i)=>setTimeout(()=>{const p=document.createElement('p');p.className=item[1];p.textContent=item[0];out.appendChild(p);out.scrollTop=out.scrollHeight;if(i===lines.length-1)running=false},500*(i+1))) });
 
