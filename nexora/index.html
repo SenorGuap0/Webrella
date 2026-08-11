@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Nexora is a fictional AI automation platform concept designed by Webrella Studio.">
+  <title>NEXORA° | Intelligence in Motion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-label" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#top">NEXORA<span>°</span></a>
+    <div class="status"><i></i><span>system online</span><b id="clock">00:00:00</b></div>
+    <nav>
+      <a href="#system">System</a>
+      <a href="#engine">Engine</a>
+      <a href="#network">Network</a>
+      <a href="#company">Company</a>
+    </nav>
+    <a class="access" href="#company">Request access ↗</a>
+  </header>
+
+  <aside class="dock" aria-label="Section navigation">
+    <a href="#top"><span>01</span><b>HOME</b></a>
+    <a href="#system"><span>02</span><b>SYSTEM</b></a>
+    <a href="#engine"><span>03</span><b>ENGINE</b></a>
+    <a href="#network"><span>04</span><b>NETWORK</b></a>
+    <a href="#company"><span>05</span><b>COMPANY</b></a>
+  </aside>
+
+  <main id="top">
+    <section class="hero">
+      <canvas id="networkCanvas" aria-hidden="true"></canvas>
+      <div class="hero-noise"></div>
+      <div class="hero-copy">
+        <p class="micro">AI OPERATIONS / WORKFLOW INFRASTRUCTURE</p>
+        <h1><span>AUTOMATE</span><span>WHAT SLOWS</span><em>YOU DOWN.</em></h1>
+        <p class="hero-lead">Nexora connects the tools your business already uses and turns repetitive work into intelligent automated systems.</p>
+      </div>
+      <div class="hero-metrics">
+        <article><span>SYSTEM STATUS</span><strong><i></i> ALL SYSTEMS OPERATIONAL</strong></article>
+        <article><span>ACTIVE AUTOMATIONS</span><strong data-counter="2847">0</strong></article>
+        <article><span>TASKS PROCESSED TODAY</span><strong data-counter="184291">0</strong><small>↑ 18.4%</small></article>
+      </div>
+      <div class="node-label n1">CRM</div><div class="node-label n2">DATA</div><div class="node-label n3">EMAIL</div><div class="node-label n4">SALES</div><div class="node-label n5">FINANCE</div>
+      <div class="scroll-cue">SCROLL TO RUN SYSTEM <span>↓</span></div>
+    </section>
+
+    <section id="system" class="workflow-section">
+      <div class="workflow-intro">
+        <p class="micro">LIVE WORKFLOW / 01</p>
+        <h2>WATCH THE WORK<br>MOVE ITSELF.</h2>
+        <p>A lead enters. Nexora decides what happens next. No tabs. No copying. No waiting.</p>
+      </div>
+      <div class="workflow-track">
+        <div class="workflow-line"><span id="flowProgress"></span></div>
+        <article class="flow-step active"><span>01</span><div><small>INPUT DETECTED</small><h3>New lead received</h3><p>Website form submitted · 10:42:18</p></div></article>
+        <article class="flow-step"><span>02</span><div><small>ANALYZING</small><h3>Intent classified</h3><p>Enterprise inquiry · 94% confidence</p></div></article>
+        <article class="flow-step"><span>03</span><div><small>ROUTING DATA</small><h3>CRM updated</h3><p>Account created · owner assigned</p></div></article>
+        <article class="flow-step"><span>04</span><div><small>ACTION TRIGGERED</small><h3>Sales notified</h3><p>Priority alert sent instantly</p></div></article>
+        <article class="flow-step"><span>05</span><div><small>COMPLETE</small><h3>Follow-up delivered</h3><p>Workflow complete in <b>0.82 sec</b></p></div></article>
+      </div>
+    </section>
+
+    <section id="engine" class="engine-section">
+      <div class="engine-head">
+        <p class="micro">CORE SYSTEM / 02</p>
+        <h2>ONE ENGINE.<br>THOUSANDS OF MOVES.</h2>
+      </div>
+      <div class="feature-rows">
+        <article><span>01</span><h3>AI ROUTING</h3><p>Send work to the right person or system based on context instead of rigid rules.</p><b>↗</b></article>
+        <article><span>02</span><h3>LIVE DATA SYNC</h3><p>Keep your tools aligned without manual exports or duplicate entry.</p><b>↗</b></article>
+        <article><span>03</span><h3>WORKFLOW ENGINE</h3><p>Build multi-step automations that connect your entire operating stack.</p><b>↗</b></article>
+        <article><span>04</span><h3>HUMAN OVERRIDE</h3><p>Pause, review, or take control whenever human judgment matters.</p><b>↗</b></article>
+      </div>
+    </section>
+
+    <section id="network" class="stats-zone">
+      <article><small>NETWORK VOLUME</small><strong data-counter="47291804">0</strong><span>TASKS AUTOMATED</span></article>
+      <article><small>RELIABILITY</small><strong>99.99%</strong><span>PLATFORM UPTIME</span></article>
+      <article><small>RESPONSE</small><strong>0.8 SEC</strong><span>AVERAGE ACTION TIME</span></article>
+    </section>
+
+    <section class="terminal-section">
+      <div class="terminal-copy"><p class="micro">SIMULATION / 03</p><h2>BUILD IT.<br>RUN IT.<br>WATCH IT WORK.</h2></div>
+      <div class="terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span><b>NEXORA TERMINAL</b></div>
+        <div class="terminal-body" id="terminalOutput">
+          <p><i>›</i> nexora.initialize()</p>
+          <p class="muted">Awaiting command...</p>
+        </div>
+        <button id="runTerminal">RUN AUTOMATION <span>↗</span></button>
+      </div>
+    </section>
+
+    <section id="company" class="cta-zone">
+      <div class="cta-ghost">NEXORA°</div>
+      <p class="micro">SYSTEM READY / 04</p>
+      <h2>YOUR BUSINESS<br>ALREADY HAS THE DATA.<br><em>MAKE IT MOVE.</em></h2>
+      <a href="#top">BUILD YOUR FIRST WORKFLOW ↗</a>
+    </section>
+  </main>
+
+  <button class="ai-toggle" id="aiToggle" aria-label="Open Nexora AI"><span class="ai-orb"><i></i><i></i><i></i></span><b>NEXORA//AI</b></button>
+  <section class="ai-panel" id="aiPanel" aria-hidden="true">
+    <header><div><span class="ai-orb small"><i></i><i></i><i></i></span><div><strong>NEXORA//AI</strong><small><i></i> ONLINE</small></div></div><button id="aiClose">×</button></header>
+    <div class="ai-messages" id="aiMessages"><div class="bot-msg">System ready. What would you like to automate?</div></div>
+    <div class="ai-prompts">
+      <button data-prompt="lead">Automate lead follow-up</button>
+      <button data-prompt="crm">Connect my CRM</button>
+      <button data-prompt="status">Show workflow status</button>
+    </div>
+  </section>
+
+  <footer>
+    <a class="footer-logo" href="#top">NEXORA°</a>
+    <div><span>WASHINGTON DC</span><span><i></i> SYSTEM ONLINE</span><span>© <b id="year"></b></span></div>
+    <a href="https://senorguap0.github.io/Webrella/" target="_blank" rel="noopener">Designed &amp; developed by <strong>Webrella</strong></a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
