@@ -2,6 +2,7 @@
 .about-page .header-inner,.pricing-page .header-inner{min-height:108px}.about-page .brand,.pricing-page .brand{width:180px;height:92px;overflow:visible;flex:0 0 180px;display:flex;align-items:center}.about-page .header-mark,.pricing-page .header-mark{display:block;width:160px;height:90px;overflow:visible}
 
 /* Stonecrest portfolio caption — same hierarchy as Marea, with fallback for pre-JS markup */
+#work .stonecrest-showcase-card>.stonecrest-link{height:auto!important;min-height:0!important;display:block!important}
 #work .stonecrest-showcase-meta,#work .stonecrest-meta{display:grid!important;grid-template-columns:1fr 1fr!important;gap:56px!important;align-items:center!important;padding:34px 38px!important;min-height:180px!important;background:#1f1f1f!important;color:#fff!important;border-radius:0 0 28px 28px!important}
 #work .stonecrest-project-title,#work .stonecrest-meta>div{display:block!important;visibility:visible!important;opacity:1!important;justify-self:start!important;width:100%!important;max-width:390px!important}
 #work .stonecrest-project-title>span,#work .stonecrest-meta>div>span{display:block!important;margin:0 0 12px!important;color:#aaa49b!important;font-size:.72rem!important;font-weight:500!important;letter-spacing:.12em!important;text-transform:uppercase!important;line-height:1.2!important}
