@@ -111,15 +111,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     .services-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch!important}
     .services-grid .service-card{min-height:492px!important;height:auto!important;display:flex!important;flex-direction:column!important;position:relative!important;overflow:hidden!important;padding-bottom:38px!important}
-    .services-grid .service-card .service-icon,.services-grid .service-card h3,.services-grid .service-card p,.services-grid .service-card .service-tag{position:relative!important;z-index:2!important}
+    .services-grid .service-card .service-icon,.services-grid .service-card h3,.services-grid .service-card p{position:relative!important;z-index:2!important}
     .services-grid .service-card h3{margin-bottom:20px!important}
     .services-grid .service-card p{margin-bottom:24px!important}
-    .services-grid .service-card .service-tag{margin-top:auto!important;display:block!important;line-height:1.25!important;max-width:100%!important}
-    .brand-design-card{background:#dbeef7!important}
-    .brand-design-card:before{content:"";position:absolute!important;width:120px!important;height:120px!important;border-radius:50%!important;right:-18px!important;top:-18px!important;background:rgba(43,127,165,.08)!important;z-index:1!important;pointer-events:none!important}
-    .brand-design-card .service-tag{width:max-content!important;max-width:calc(100% - 30px)!important;text-align:center!important;align-self:center!important;margin-left:auto!important;margin-right:auto!important;white-space:nowrap!important;transform:none!important}
+    .services-grid .service-card .service-tag{position:absolute!important;left:30px!important;bottom:28px!important;width:auto!important;max-width:calc(100% - 60px)!important;margin:0!important;text-align:left!important;align-self:auto!important;white-space:nowrap!important;transform:none!important;line-height:1.25!important;z-index:2!important}
+    .blue-card{background:var(--soft-blue)!important}
+    .blue-card:after{background:rgba(43,127,165,.14)!important}
+    .brand-design-card:before{content:none!important}
     @media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.services-grid .service-card{min-height:430px!important}}
-    @media(max-width:620px){.services-grid{grid-template-columns:1fr!important}.services-grid .service-card{min-height:390px!important}.brand-design-card .service-tag{white-space:normal!important}}
+    @media(max-width:620px){.services-grid{grid-template-columns:1fr!important}.services-grid .service-card{min-height:390px!important}.services-grid .service-card .service-tag{white-space:normal!important}}
 
     @media(min-width:1121px){
       .header-inner{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;max-width:none!important;width:calc(100% - 64px)!important}
