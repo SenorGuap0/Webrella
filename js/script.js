@@ -56,6 +56,28 @@ document.addEventListener('DOMContentLoaded', function () {
     footerBottom.appendChild(footerEmail);
   }
 
+  var servicesSection = document.querySelector('#services');
+  if (servicesSection) {
+    var servicesHeading = servicesSection.querySelector('.split-heading h2');
+    var servicesIntro = servicesSection.querySelector('.split-heading > p');
+    var servicesGrid = servicesSection.querySelector('.services-grid');
+
+    if (servicesHeading) servicesHeading.textContent = 'Everything you need to make your business look polished.';
+    if (servicesIntro) servicesIntro.textContent = 'From websites to the visuals that support them, we help small businesses keep their brand clear and consistent across digital and print.';
+
+    if (servicesGrid && !servicesGrid.querySelector('.brand-design-card')) {
+      var brandCard = document.createElement('article');
+      brandCard.className = 'service-card brand-design-card blue-card';
+      brandCard.innerHTML = '<div class="service-icon">04</div><h3>Menus & Brand Materials</h3><p>Custom menus, posters, flyers, social graphics, and other branded pieces designed to match the look and feel of your business.</p><span class="service-tag">Print + promotional design</span>';
+      servicesGrid.appendChild(brandCard);
+    }
+  }
+
+  var marqueeTrack = document.querySelector('.marquee-track');
+  if (marqueeTrack && !marqueeTrack.textContent.includes('Menus & Posters')) {
+    marqueeTrack.insertAdjacentHTML('beforeend', '<i></i><span>Menus & Posters</span><i></i><span>Brand Materials</span>');
+  }
+
   var featuredProject = document.querySelector('#work .project-card.project-wide');
   if (featuredProject) {
     var featuredVisual = featuredProject.querySelector('.project-visual');
@@ -86,6 +108,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .contact-email a{color:#fff;font-weight:800;text-underline-offset:3px}
     .footer-email{color:#b8b8b1;text-decoration:none;font-size:.85rem}
     .footer-email:hover{color:#fff}
+
+    .services-grid{grid-template-columns:repeat(4,1fr)!important}
+    .brand-design-card{background:#dbeef7!important}
+    @media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,1fr)!important}}
+    @media(max-width:620px){.services-grid{grid-template-columns:1fr!important}}
 
     @media(min-width:1121px){
       .header-inner{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;max-width:none!important;width:calc(100% - 64px)!important}
