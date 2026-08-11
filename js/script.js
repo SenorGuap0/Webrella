@@ -51,6 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
     contactCopy.appendChild(emailLine);
   }
 
+  var contactForm = document.querySelector('.contact-form');
+  if (contactForm && !contactForm.querySelector('.form-privacy-note')) {
+    var privacyNote = document.createElement('p');
+    privacyNote.className = 'form-privacy-note';
+    privacyNote.style.cssText = 'margin:12px 0 0;font-size:.76rem;line-height:1.5;color:rgba(255,255,255,.72)';
+    privacyNote.innerHTML = 'By submitting this form, you agree that Webrella may use the information you provide to respond to your inquiry. Please do not send passwords or sensitive financial information. <a href="privacy.html" style="color:inherit;font-weight:800">Privacy Policy</a>';
+    contactForm.appendChild(privacyNote);
+  }
+
   var footerBottom = document.querySelector('.footer-bottom');
   if (footerBottom && !footerBottom.querySelector('.footer-email')) {
     var footerEmail = document.createElement('a');
@@ -58,6 +67,17 @@ document.addEventListener('DOMContentLoaded', function () {
     footerEmail.href = 'mailto:webrellacontact@gmail.com';
     footerEmail.textContent = 'webrellacontact@gmail.com';
     footerBottom.appendChild(footerEmail);
+  }
+  var footerLinks = document.querySelector('.footer-links');
+  if (footerLinks && !footerLinks.querySelector('a[href="privacy.html"]')) {
+    var privacyLink = document.createElement('a');
+    privacyLink.href = 'privacy.html';
+    privacyLink.textContent = 'Privacy';
+    footerLinks.appendChild(privacyLink);
+    var termsLink = document.createElement('a');
+    termsLink.href = 'terms.html';
+    termsLink.textContent = 'Terms';
+    footerLinks.appendChild(termsLink);
   }
 
   var servicesSection = document.querySelector('#services');
