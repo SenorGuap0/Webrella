@@ -109,10 +109,16 @@ document.addEventListener('DOMContentLoaded', function () {
     .footer-email{color:#b8b8b1;text-decoration:none;font-size:.85rem}
     .footer-email:hover{color:#fff}
 
-    .services-grid{grid-template-columns:repeat(4,1fr)!important}
+    .services-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch!important}
+    .services-grid .service-card{min-height:492px!important;height:auto!important;display:flex!important;flex-direction:column!important;position:relative!important;overflow:hidden!important;padding-bottom:38px!important}
+    .services-grid .service-card .service-icon,.services-grid .service-card h3,.services-grid .service-card p,.services-grid .service-card .service-tag{position:relative!important;z-index:2!important}
+    .services-grid .service-card h3{margin-bottom:20px!important}
+    .services-grid .service-card p{margin-bottom:24px!important}
+    .services-grid .service-card .service-tag{margin-top:auto!important;display:block!important;line-height:1.25!important;max-width:100%!important}
     .brand-design-card{background:#dbeef7!important}
-    @media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,1fr)!important}}
-    @media(max-width:620px){.services-grid{grid-template-columns:1fr!important}}
+    .brand-design-card:before{content:"";position:absolute!important;width:150px!important;height:150px!important;border-radius:50%!important;right:-28px!important;top:-28px!important;background:rgba(43,127,165,.12)!important;z-index:1!important;pointer-events:none!important}
+    @media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.services-grid .service-card{min-height:430px!important}}
+    @media(max-width:620px){.services-grid{grid-template-columns:1fr!important}.services-grid .service-card{min-height:390px!important}}
 
     @media(min-width:1121px){
       .header-inner{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;max-width:none!important;width:calc(100% - 64px)!important}
