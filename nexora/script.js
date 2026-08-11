@@ -22,12 +22,21 @@ document.addEventListener('DOMContentLoaded',()=>{
   const dockSections=[$('.hero'),$('#system'),$('#engine'),$('#network'),$('#company')];
   function setDockActive(index){dockLinks.forEach((a,i)=>a.classList.toggle('active',i===index))}
   function updateDock(){
-    if(window.scrollY<Math.max(120,innerHeight*.35)){setDockActive(0);return}
-    const marker=innerHeight*.42;
+    const probe=window.scrollY+innerHeight*.28;
     let active=0;
-    dockSections.forEach((section,i)=>{if(!section)return;const r=section.getBoundingClientRect();if(r.top<=marker&&r.bottom>marker)active=i});
+    for(let i=1;i<dockSections.length;i++){
+      const section=dockSections[i];
+      if(section&&probe>=section.offsetTop)active=i;
+    }
     setDockActive(active);
   }
+  dockLinks.forEach((link,i)=>link.addEventListener('click',()=>{
+    setDockActive(i);
+    if(i===0){
+      window.scrollTo({top:0,behavior:'smooth'});
+      history.replaceState(null,'',location.pathname+location.search+'#top');
+    }
+  }));
   addEventListener('scroll',updateDock,{passive:true});
   addEventListener('resize',updateDock);
   updateDock();
