@@ -9,7 +9,7 @@
 #work .stonecrest-project-title h3,#work .stonecrest-meta>div>h3{display:block!important;margin:0!important;color:#fff!important;font-size:1.35rem!important;font-weight:800!important;line-height:1.15!important;letter-spacing:-.02em!important}
 #work .stonecrest-project-copy{justify-self:end!important;width:100%!important;max-width:390px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:15px!important;visibility:visible!important;opacity:1!important}
 #work .stonecrest-project-copy p{margin:0!important;color:#c3c0bb!important;font-size:1rem!important;line-height:1.55!important}
-#work .stonecrest-showcase-meta .project-live-link,#work .stonecrest-meta>a{justify-self:end!important;align-self:center!important;color:#fff!important;text-decoration:none!important;font-size:.75rem!important;font-weight:850!important;border-bottom:1px solid rgba(255,255,255,.5)!important;padding-bottom:3px!important}
+#work .stonecrest-showcase-meta .project-live-link,#work .stonecrest-meta>a{justify-self:start!important;align-self:flex-start!important;color:#fff!important;text-decoration:none!important;font-size:.75rem!important;font-weight:850!important;border-bottom:1px solid rgba(255,255,255,.5)!important;padding-bottom:3px!important}
 
 /* Stonecrest preview framing: show the top project label and the full hero headline together. */
 #work .stonecrest-preview-wrap iframe{width:200%!important;height:2200px!important;top:-24px!important;transform:scale(.5)!important;transform-origin:top left!important}
