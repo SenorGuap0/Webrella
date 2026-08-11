@@ -117,8 +117,9 @@ document.addEventListener('DOMContentLoaded', function () {
     .services-grid .service-card .service-tag{margin-top:auto!important;display:block!important;line-height:1.25!important;max-width:100%!important}
     .brand-design-card{background:#dbeef7!important}
     .brand-design-card:before{content:"";position:absolute!important;width:150px!important;height:150px!important;border-radius:50%!important;right:-28px!important;top:-28px!important;background:rgba(43,127,165,.12)!important;z-index:1!important;pointer-events:none!important}
+    .brand-design-card .service-tag{width:100%!important;text-align:center!important;align-self:center!important;white-space:nowrap!important}
     @media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.services-grid .service-card{min-height:430px!important}}
-    @media(max-width:620px){.services-grid{grid-template-columns:1fr!important}.services-grid .service-card{min-height:390px!important}}
+    @media(max-width:620px){.services-grid{grid-template-columns:1fr!important}.services-grid .service-card{min-height:390px!important}.brand-design-card .service-tag{white-space:normal!important}}
 
     @media(min-width:1121px){
       .header-inner{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;max-width:none!important;width:calc(100% - 64px)!important}
