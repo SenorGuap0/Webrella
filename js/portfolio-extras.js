@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .extra-sample-copy span{display:block;margin-bottom:8px;font-size:.7rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#a9a9a3}
     .extra-sample-copy h3{margin:0 0 10px;font-size:1.55rem;color:#fff}
     .extra-sample-copy p{margin:0;color:#aaa9a4;line-height:1.65}
+    .portfolio-type-label{position:absolute;right:24px;bottom:22px;z-index:20;padding:12px 18px;border-radius:999px;background:#111;color:#fff;font-size:.72rem;font-weight:900;line-height:1;letter-spacing:-.01em;box-shadow:0 10px 28px rgba(0,0,0,.28);pointer-events:none}
 
     .stonecrest-poster-stage{background:radial-gradient(circle at 17% 13%,rgba(255,255,255,.06),transparent 24%),linear-gradient(135deg,#101010 0 58%,#d96033 58% 73%,#c9c4ba 73% 100%)}
     .stonecrest-poster-stage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.016) 0 1px,transparent 1px 5px);pointer-events:none}
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .ai-main{display:grid;grid-template-rows:auto auto 1fr auto;padding:20px 22px;min-width:0}.ai-top{display:flex;justify-content:space-between;align-items:center}.ai-status{font:700 .52rem/1 monospace;color:#b7ff32;letter-spacing:.1em}.ai-time{font:600 .5rem/1 monospace;color:#526050}.ai-main h4{margin:19px 0 5px;font-size:1.4rem}.ai-main>div>p{margin:0;color:#747d72;font-size:.68rem}.ai-workspace{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin-top:18px;min-height:220px}.ai-left{display:grid;grid-template-rows:auto 1fr;gap:10px}.ai-prompt{border:1px solid #263024;border-radius:11px;padding:13px;color:#a7afa3;font-size:.68rem;background:#0c100c}.ai-network-card{position:relative;overflow:hidden;border:1px solid #20291f;border-radius:12px;background:#070a07;min-height:150px}.ai-network-card canvas{position:absolute;inset:0;width:100%;height:100%}.ai-network-label{position:absolute;left:12px;top:10px;z-index:2;font:700 .46rem/1 monospace;color:#7f8a7c;letter-spacing:.08em}.ai-network-live{position:absolute;right:10px;top:9px;z-index:2;font:700 .43rem/1 monospace;color:#b7ff32}.ai-right{display:grid;grid-template-rows:1fr auto;gap:10px}.ai-panel{border:1px solid #20291f;border-radius:12px;padding:12px;background:#0a0d0a}.ai-panel-title{font:700 .48rem/1 monospace;color:#7f8a7c;letter-spacing:.08em;margin-bottom:12px}.ai-feed{display:grid;gap:9px}.ai-feed b{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:center;font:600 .48rem/1.35 monospace;color:#a7afa3}.ai-feed b:before{content:"";width:5px;height:5px;border-radius:50%;background:#b7ff32;box-shadow:0 0 8px rgba(183,255,50,.5)}.ai-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ai-metrics div{border:1px solid #20291f;border-radius:9px;padding:9px}.ai-metrics strong{display:block;color:#b7ff32;font:800 .9rem/1 monospace}.ai-metrics small{color:#657062;font:.43rem/1.3 monospace}.ai-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.ai-actions b{padding:9px 7px;border:1px solid #20291f;border-radius:8px;font:600 .46rem/1.25 monospace;color:#9ba497;text-align:center}
 
     @media(max-width:850px){.portfolio-extra-showcase{grid-template-columns:1fr}.extra-sample-stage{height:560px}}
-    @media(max-width:520px){.extra-sample-stage{height:480px;padding:18px}.poster-sheet{height:min(430px,calc(100% - 4px))}.ai-window{width:100%;grid-template-columns:88px 1fr;min-height:390px}.ai-side{padding:14px 8px}.ai-main{padding:14px 10px}.ai-workspace{grid-template-columns:1fr}.ai-right{display:none}.ai-actions{grid-template-columns:1fr}.ai-nav i{font-size:.44rem;padding:0 5px}}
+    @media(max-width:520px){.extra-sample-stage{height:480px;padding:18px}.poster-sheet{height:min(430px,calc(100% - 4px))}.ai-window{width:100%;grid-template-columns:88px 1fr;min-height:390px}.ai-side{padding:14px 8px}.ai-main{padding:14px 10px}.ai-workspace{grid-template-columns:1fr}.ai-right{display:none}.ai-actions{grid-template-columns:1fr}.ai-nav i{font-size:.44rem;padding:0 5px}.portfolio-type-label{right:14px;bottom:14px;padding:10px 14px;font-size:.65rem}}
   `;
   document.head.appendChild(style);
 
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
           <div class="poster-footer"><div class="poster-cta"><small>Ready to build?</small><strong>GET A FREE ESTIMATE</strong><div class="poster-contact">stonecrestconcrete.com · (240) 555-0188</div></div><div class="poster-qr-wrap"><span class="poster-qr" aria-hidden="true"></span><small>Scan to quote</small></div></div>
         </div>
+        <span class="portfolio-type-label">Poster design</span>
       </div>
       <div class="extra-sample-copy"><span>Graphic design concept</span><h3>Stonecrest Promotional Poster</h3><p>A more polished contractor campaign piece with stronger branding, clearer hierarchy, service callouts, trust signals, and an estimate-focused call to action.</p></div>
     </article>
@@ -70,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="ai-actions"><b>ANALYZE FILES</b><b>BUILD WORKFLOW</b><b>RUN RESEARCH</b></div>
           </div>
         </div>
+        <span class="portfolio-type-label">AI interface</span>
       </div>
       <div class="extra-sample-copy"><span>UI / product design concept</span><h3>NEXORA° AI Interface</h3><p>A more complete AI workspace concept that brings the live animated network language from the NEXORA° site directly into the product dashboard.</p></div>
     </article>`;
