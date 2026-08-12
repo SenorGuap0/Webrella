@@ -44,14 +44,106 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var contactCopy = document.querySelector('.contact-copy');
-  if (contactCopy && !contactCopy.querySelector('.contact-email')) {
-    var emailLine = document.createElement('p');
-    emailLine.className = 'contact-email';
-    emailLine.innerHTML = 'Prefer email? <a href="mailto:webrellacontact@gmail.com">webrellacontact@gmail.com</a>';
-    contactCopy.appendChild(emailLine);
+  if (contactCopy) {
+    var contactKicker = contactCopy.querySelector('.contact-kicker');
+    var contactHeading = contactCopy.querySelector('h2');
+    var contactParagraph = contactCopy.querySelector('p:not(.section-kicker)');
+    if (contactKicker) contactKicker.textContent = 'Start a project';
+    if (contactHeading) contactHeading.textContent = "Tell us what you're looking to build.";
+    if (contactParagraph) contactParagraph.textContent = 'Share a few details about your business, your current website, and what you need. We will review your inquiry and reach out with the best next step.';
+    var existingContactEmail = contactCopy.querySelector('.contact-email');
+    if (existingContactEmail) {
+      existingContactEmail.href = 'mailto:contact@webrellastudio.com';
+      existingContactEmail.textContent = 'contact@webrellastudio.com';
+    } else {
+      var emailLine = document.createElement('p');
+      emailLine.className = 'contact-email';
+      emailLine.innerHTML = 'Prefer email? <a href="mailto:contact@webrellastudio.com">contact@webrellastudio.com</a>';
+      contactCopy.appendChild(emailLine);
+    }
   }
 
   var contactForm = document.querySelector('.contact-form');
+  if (contactForm && !contactForm.dataset.projectIntakeUpgraded) {
+    contactForm.dataset.projectIntakeUpgraded = 'true';
+    contactForm.innerHTML = `
+      <input type="hidden" name="_subject" value="New Webrella project inquiry">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="company">Business</label>
+          <input id="company" name="company" type="text" placeholder="Business name" required>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone <span style="font-weight:500;opacity:.65">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="website">Existing website <span style="font-weight:500;opacity:.65">(optional)</span></label>
+        <input id="website" name="existing_website" type="url" placeholder="https://yourbusiness.com">
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="project-type">What do you need?</label>
+          <select id="project-type" name="project_type" required>
+            <option value="" selected disabled>Select a service</option>
+            <option>New website</option>
+            <option>Website redesign</option>
+            <option>Landing page</option>
+            <option>Website care / updates</option>
+            <option>Menus & brand materials</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="budget">Approximate budget</label>
+          <select id="budget" name="budget">
+            <option value="" selected>Not sure yet</option>
+            <option>$200–$500</option>
+            <option>$500–$1,000</option>
+            <option>$1,000–$2,500</option>
+            <option>$2,500+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="timeline">Target launch</label>
+        <input id="timeline" name="target_launch" type="text" placeholder="Example: October 2026 or No rush">
+      </div>
+      <div class="form-row">
+        <label for="message">Project details</label>
+        <textarea id="message" name="message" rows="6" placeholder="Tell us about your business, what you want the website to do, and any features or ideas you have in mind." required></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-light" type="submit">Send project inquiry <span>↗</span></button>
+      </div>`;
+
+    contactForm.querySelectorAll('select').forEach(function (select) {
+      select.style.width = '100%';
+      select.style.minHeight = '52px';
+      select.style.padding = '0 14px';
+      select.style.border = '1px solid rgba(255,255,255,.28)';
+      select.style.borderRadius = '0';
+      select.style.background = 'transparent';
+      select.style.color = '#fff';
+      select.style.font = 'inherit';
+      select.style.outline = 'none';
+    });
+    contactForm.querySelectorAll('select option').forEach(function (option) {
+      option.style.color = '#111';
+    });
+  }
+
   if (contactForm && !contactForm.querySelector('.form-privacy-note')) {
     var privacyNote = document.createElement('p');
     privacyNote.className = 'form-privacy-note';
@@ -64,11 +156,16 @@ document.addEventListener('DOMContentLoaded', function () {
   if (footerBottom && !footerBottom.querySelector('.footer-email')) {
     var footerEmail = document.createElement('a');
     footerEmail.className = 'footer-email';
-    footerEmail.href = 'mailto:webrellacontact@gmail.com';
-    footerEmail.textContent = 'webrellacontact@gmail.com';
+    footerEmail.href = 'mailto:contact@webrellastudio.com';
+    footerEmail.textContent = 'contact@webrellastudio.com';
     footerBottom.appendChild(footerEmail);
   }
   var footerLinks = document.querySelector('.footer-links');
+  if (footerLinks) {
+    footerLinks.querySelectorAll('a[href="mailto:webrellacontact@gmail.com"]').forEach(function (link) {
+      link.href = 'mailto:contact@webrellastudio.com';
+    });
+  }
   if (footerLinks && !footerLinks.querySelector('a[href="privacy.html"]')) {
     var privacyLink = document.createElement('a');
     privacyLink.href = 'privacy.html';
