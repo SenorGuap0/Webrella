@@ -33,12 +33,28 @@
   display: none !important;
 }
 
-/* Keep content readable while still letting the rainbow show around it. */
-.about-page .founder-card,
-.about-page .story-card {
-  background: rgba(255, 255, 255, 0.88);
+.about-page .founder-card {
+  background: rgba(255,255,255,.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+}
+
+.about-page .story-card {
+  background: #171717;
+  color: #fff;
+}
+
+.about-page .story-card h3,
+.about-page .story-copy p:first-child {
+  color: #fff;
+}
+
+.about-page .story-copy p {
+  color: #c1c0b9;
+}
+
+.about-page .story-label {
+  color: var(--yellow);
 }
 
 @media (max-width: 700px) {
