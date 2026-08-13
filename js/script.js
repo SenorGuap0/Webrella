@@ -4,6 +4,46 @@ document.addEventListener('DOMContentLoaded', function () {
   dynamicStyle.href = 'css/dynamic.css?v=20260811-3';
   document.head.appendChild(dynamicStyle);
 
+  var heroArt = document.querySelector('.hero-art');
+  if (heroArt && !heroArt.dataset.dropletHero) {
+    heroArt.dataset.dropletHero = 'true';
+    heroArt.innerHTML = `
+      <div class="hero-logo-clean">
+        <img src="ChatGPT%20Image%20Aug%2010,%202026,%2011_04_26%20AM.png" alt="Webrella Studio logo">
+      </div>
+      <span class="service-drop drop-design">DESIGN</span>
+      <span class="service-drop drop-build">BUILD</span>
+      <span class="service-drop drop-brand">BRAND</span>
+      <span class="service-drop drop-launch">LAUNCH</span>
+      <span class="service-drop drop-grow">GROW</span>
+    `;
+
+    var heroStyle = document.createElement('style');
+    heroStyle.textContent = `
+      .hero-art{min-height:570px!important;overflow:visible!important;isolation:isolate}
+      .hero-art:before{content:""!important;position:absolute!important;left:20%!important;right:20%!important;bottom:7%!important;top:auto!important;height:30px!important;border-radius:50%!important;background:rgba(0,0,0,.11)!important;filter:blur(14px)!important;opacity:.55!important;z-index:-1!important;animation:heroDropShadow 4.8s ease-in-out infinite!important}
+      .hero-art:after{content:""!important;position:absolute!important;inset:9% 8%!important;border-radius:50%!important;background:radial-gradient(circle,rgba(255,206,85,.16),rgba(146,189,112,.08) 40%,rgba(43,127,165,.05) 58%,transparent 72%)!important;filter:blur(20px)!important;z-index:-2!important;animation:heroGlow 5.8s ease-in-out infinite!important}
+      .hero-logo-clean{position:relative;z-index:3;width:min(680px,118%);display:grid;place-items:center;animation:heroLogoFloat 4.8s ease-in-out infinite;transform-origin:50% 60%}
+      .hero-logo-clean img{width:100%;height:auto;display:block;object-fit:contain;filter:contrast(1.08) saturate(1.06) drop-shadow(0 26px 28px rgba(0,0,0,.12))}
+      .service-drop{position:absolute;z-index:5;width:86px;height:104px;display:grid;place-items:center;padding:13px 9px 7px;border-radius:55% 55% 60% 60% / 68% 68% 42% 42%;clip-path:path('M43 0 C62 25 84 45 84 67 C84 90 66 104 43 104 C20 104 2 90 2 67 C2 45 24 25 43 0 Z');color:#fff;font-size:.68rem;font-weight:950;letter-spacing:.05em;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 18px 32px rgba(0,0,0,.13);transform-origin:50% 70%}
+      .drop-design{right:1%;top:12%;background:linear-gradient(160deg,#ff6542,#ef3741);animation:dropDanceA 5.2s ease-in-out infinite}
+      .drop-build{left:1%;top:30%;background:linear-gradient(160deg,#a7cf76,#72a94f);animation:dropDanceB 5.8s ease-in-out infinite -.8s}
+      .drop-brand{left:16%;top:3%;background:linear-gradient(160deg,#ffd65b,#f2ad1e);animation:dropDanceC 6.2s ease-in-out infinite -1.6s}
+      .drop-launch{right:-1%;bottom:17%;background:linear-gradient(160deg,#52c9c2,#2b9eaa);animation:dropDanceB 5.6s ease-in-out infinite -2.1s}
+      .drop-grow{right:13%;bottom:0;background:linear-gradient(160deg,#9863c7,#6841a4);animation:dropDanceC 6s ease-in-out infinite -2.7s}
+      @keyframes heroLogoFloat{0%,100%{transform:translateY(0) rotate(-.8deg) scale(1)}50%{transform:translateY(-20px) rotate(.8deg) scale(1.035)}}
+      @keyframes heroDropShadow{0%,100%{transform:scaleX(1);opacity:.55}50%{transform:scaleX(.72);opacity:.3}}
+      @keyframes heroGlow{0%,100%{transform:scale(.95);opacity:.65}50%{transform:scale(1.07);opacity:1}}
+      @keyframes dropDanceA{0%,100%{transform:translate(0,0) rotate(-5deg)}45%{transform:translate(-15px,26px) rotate(4deg)}70%{transform:translate(8px,9px) rotate(-1deg)}}
+      @keyframes dropDanceB{0%,100%{transform:translate(0,0) rotate(4deg)}40%{transform:translate(16px,-22px) rotate(-5deg)}75%{transform:translate(-8px,11px) rotate(2deg)}}
+      @keyframes dropDanceC{0%,100%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(8px,24px) rotate(5deg)}}
+      @media(max-width:1000px){.hero-logo-clean{width:min(600px,105%)}.service-drop{width:72px;height:88px;font-size:.59rem}.drop-design{right:0}.drop-build{left:0}.drop-brand{left:12%}.drop-launch{right:0}.drop-grow{right:10%}}
+      @media(max-width:720px){.hero-art{min-height:470px!important}.hero-logo-clean{width:min(470px,110%)}.service-drop{width:62px;height:76px;font-size:.52rem}.drop-design{right:2%;top:10%}.drop-build{left:1%;top:37%}.drop-brand{left:14%;top:4%}.drop-launch{right:1%;bottom:17%}.drop-grow{right:15%;bottom:2%}}
+      @media(prefers-reduced-motion:reduce){.hero-logo-clean,.service-drop,.hero-art:before,.hero-art:after{animation:none!important}}
+    `;
+    document.head.appendChild(heroStyle);
+  }
+
   var btn = document.querySelector('.nav-toggle');
   var nav = document.getElementById('primary-navigation');
 
