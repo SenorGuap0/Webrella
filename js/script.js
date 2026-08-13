@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactParagraph) contactParagraph.textContent = 'Share a few details about your business, your current website, and what you need. We will review your inquiry and reach out with the best next step.';
     var existingContactEmail = contactCopy.querySelector('.contact-email');
     if (existingContactEmail) {
-      existingContactEmail.href = 'mailto:contact@webrellastudio.com';
-      existingContactEmail.textContent = 'contact@webrellastudio.com';
+      existingContactEmail.href = 'mailto:webrellacontact@gmail.com';
+      existingContactEmail.textContent = 'webrellacontact@gmail.com';
     } else {
       var emailLine = document.createElement('p');
       emailLine.className = 'contact-email';
-      emailLine.innerHTML = 'Prefer email? <a href="mailto:contact@webrellastudio.com">contact@webrellastudio.com</a>';
+      emailLine.innerHTML = 'Prefer email? <a href="mailto:webrellacontact@gmail.com">webrellacontact@gmail.com</a>';
       contactCopy.appendChild(emailLine);
     }
   }
@@ -156,14 +156,14 @@ document.addEventListener('DOMContentLoaded', function () {
   if (footerBottom && !footerBottom.querySelector('.footer-email')) {
     var footerEmail = document.createElement('a');
     footerEmail.className = 'footer-email';
-    footerEmail.href = 'mailto:contact@webrellastudio.com';
-    footerEmail.textContent = 'contact@webrellastudio.com';
+    footerEmail.href = 'mailto:webrellacontact@gmail.com';
+    footerEmail.textContent = 'webrellacontact@gmail.com';
     footerBottom.appendChild(footerEmail);
   }
   var footerLinks = document.querySelector('.footer-links');
   if (footerLinks) {
-    footerLinks.querySelectorAll('a[href="mailto:webrellacontact@gmail.com"]').forEach(function (link) {
-      link.href = 'mailto:contact@webrellastudio.com';
+    footerLinks.querySelectorAll('a[href="mailto:contact@webrellastudio.com"]').forEach(function (link) {
+      link.href = 'mailto:webrellacontact@gmail.com';
     });
   }
   if (footerLinks && !footerLinks.querySelector('a[href="privacy.html"]')) {
