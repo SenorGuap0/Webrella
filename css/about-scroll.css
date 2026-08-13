@@ -1,0 +1,59 @@
+/* About page: remove the hero umbrella visual and let the page transition into Webrella's rainbow as visitors scroll. */
+.about-page main {
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf8 0%,
+      #fffdf8 12%,
+      #fff1f2 25%,
+      #fff0dc 38%,
+      #fff8cf 51%,
+      #eaf7dc 65%,
+      #dff2fb 80%,
+      #eee7fa 100%
+    );
+}
+
+.about-page .page-hero,
+.about-page .team-section {
+  background: transparent !important;
+}
+
+.about-page .about-hero-grid {
+  display: block !important;
+  max-width: 900px;
+}
+
+.about-page .about-hero-copy {
+  max-width: 780px;
+}
+
+.about-page .about-hero-art {
+  display: none !important;
+}
+
+/* Keep content readable while still letting the rainbow show around it. */
+.about-page .founder-card,
+.about-page .story-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@media (max-width: 700px) {
+  .about-page main {
+    background:
+      linear-gradient(
+        180deg,
+        #fffdf8 0%,
+        #fffdf8 10%,
+        #fff1f2 24%,
+        #fff0dc 38%,
+        #fff8cf 52%,
+        #eaf7dc 67%,
+        #dff2fb 82%,
+        #eee7fa 100%
+      );
+  }
+}
