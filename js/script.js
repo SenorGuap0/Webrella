@@ -93,12 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactParagraph) contactParagraph.textContent = 'Share a few details about your business, your current website, and what you need. We will review your inquiry and reach out with the best next step.';
     var existingContactEmail = contactCopy.querySelector('.contact-email');
     if (existingContactEmail) {
-      existingContactEmail.href = 'mailto:webrellacontact@gmail.com';
-      existingContactEmail.textContent = 'webrellacontact@gmail.com';
+      existingContactEmail.href = 'mailto:contact@webrellastudio.com';
+      existingContactEmail.textContent = 'contact@webrellastudio.com';
     } else {
       var emailLine = document.createElement('p');
       emailLine.className = 'contact-email';
-      emailLine.innerHTML = 'Prefer email? <a href="mailto:webrellacontact@gmail.com">webrellacontact@gmail.com</a>';
+      emailLine.innerHTML = 'Prefer email? <a href="mailto:contact@webrellastudio.com">contact@webrellastudio.com</a>';
       contactCopy.appendChild(emailLine);
     }
   }
@@ -196,14 +196,14 @@ document.addEventListener('DOMContentLoaded', function () {
   if (footerBottom && !footerBottom.querySelector('.footer-email')) {
     var footerEmail = document.createElement('a');
     footerEmail.className = 'footer-email';
-    footerEmail.href = 'mailto:webrellacontact@gmail.com';
-    footerEmail.textContent = 'webrellacontact@gmail.com';
+    footerEmail.href = 'mailto:contact@webrellastudio.com';
+    footerEmail.textContent = 'contact@webrellastudio.com';
     footerBottom.appendChild(footerEmail);
   }
   var footerLinks = document.querySelector('.footer-links');
   if (footerLinks) {
     footerLinks.querySelectorAll('a[href="mailto:contact@webrellastudio.com"]').forEach(function (link) {
-      link.href = 'mailto:webrellacontact@gmail.com';
+      link.href = 'mailto:contact@webrellastudio.com';
     });
   }
   if (footerLinks && !footerLinks.querySelector('a[href="privacy.html"]')) {
